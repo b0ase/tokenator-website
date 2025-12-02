@@ -1,9 +1,9 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 
-export default function PortfolioPage() {
+function PortfolioContent() {
   const searchParams = useSearchParams()
   const [address, setAddress] = useState(searchParams.get('address') || '')
   const [utxos, setUtxos] = useState<any[]>([])
@@ -144,5 +144,13 @@ export default function PortfolioPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function PortfolioPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PortfolioContent />
+    </Suspense>
   )
 }
