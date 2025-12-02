@@ -46,7 +46,7 @@ export default function RootLayout({
             {/* Footer */}
             <footer className="border-t border-gray-800 py-8 px-4 mt-20">
               <div className="max-w-7xl mx-auto text-center text-gray-400 text-sm">
-                <p>© 2024 Tokenator. Built with Next.js and BSV.</p>
+                <p>© 2025 Tokenator. Built with Next.js and BSV.</p>
                 <p className="mt-2">
                   Secure token management with automatic change output protection.
                 </p>
