@@ -14,7 +14,7 @@ export default function Home() {
       {/* Hero */}
       <div style={{ 
         padding: '100px 20px 60px', 
-        maxWidth: '900px', 
+        maxWidth: '1200px', 
         margin: '0 auto' 
       }}>
         <h1 style={{ 
@@ -69,14 +69,14 @@ export default function Home() {
       {/* Divider */}
       <div style={{ 
         borderTop: '1px solid #e5e5e5', 
-        maxWidth: '900px', 
+        maxWidth: '1200px', 
         margin: '0 auto' 
       }}></div>
 
       {/* Features */}
       <div style={{ 
         padding: '60px 20px', 
-        maxWidth: '900px', 
+        maxWidth: '1200px', 
         margin: '0 auto' 
       }}>
         <h2 style={{ 
@@ -174,14 +174,14 @@ export default function Home() {
       {/* Divider */}
       <div style={{ 
         borderTop: '1px solid #e5e5e5', 
-        maxWidth: '900px', 
+        maxWidth: '1200px', 
         margin: '0 auto' 
       }}></div>
 
       {/* Tools */}
       <div style={{ 
         padding: '60px 20px', 
-        maxWidth: '900px', 
+        maxWidth: '1200px', 
         margin: '0 auto' 
       }}>
         <h2 style={{ 
@@ -274,7 +274,7 @@ export default function Home() {
       <div style={{ 
         borderTop: '1px solid #e5e5e5', 
         padding: '40px 20px', 
-        maxWidth: '900px', 
+        maxWidth: '1200px', 
         margin: '0 auto' 
       }}>
         <div style={{ 

@@ -20,7 +20,7 @@ export default function Navigation() {
       background: '#fff'
     }}>
       <div style={{ 
-        maxWidth: '900px', 
+        maxWidth: '1200px', 
         margin: '0 auto', 
         padding: '0 20px',
         display: 'flex',

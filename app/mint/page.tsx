@@ -50,7 +50,7 @@ export default function MintPage() {
 
   return (
     <div style={{
-      maxWidth: '900px',
+      maxWidth: '1200px',
       margin: '0 auto',
       padding: '20px',
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
