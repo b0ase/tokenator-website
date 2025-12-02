@@ -49,26 +49,70 @@ function PortfolioContent() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto">
-      <h1 className="text-4xl font-bold mb-8">Token Portfolio</h1>
+    <div style={{
+      maxWidth: '900px',
+      margin: '0 auto',
+      padding: '20px',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+      backgroundColor: '#fff',
+      color: '#000'
+    }}>
+      <h1 style={{
+        fontSize: '2rem',
+        fontWeight: '400',
+        marginBottom: '2rem',
+        color: '#000'
+      }}>
+        Token Portfolio
+      </h1>
       
-      <div className="bg-gray-900 rounded-lg p-6 space-y-6">
+      <div style={{
+        border: '1px solid #e5e5e5',
+        padding: '2rem',
+        marginBottom: '2rem'
+      }}>
         <div>
-          <label className="block text-sm font-medium text-gray-400 mb-2">
+          <label style={{
+            display: 'block',
+            fontSize: '0.875rem',
+            color: '#666',
+            marginBottom: '0.5rem',
+            fontWeight: '400'
+          }}>
             BSV Address
           </label>
-          <div className="flex space-x-4">
+          <div style={{
+            display: 'flex',
+            gap: '1rem'
+          }}>
             <input
               type="text"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               placeholder="Enter BSV address..."
-              className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500"
+              style={{
+                flex: '1',
+                padding: '0.75rem',
+                border: '1px solid #e5e5e5',
+                fontSize: '0.875rem',
+                fontFamily: 'inherit',
+                backgroundColor: '#fff',
+                color: '#000'
+              }}
             />
             <button
               onClick={fetchUTXOs}
               disabled={loading}
-              className="px-6 py-2 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 rounded-lg font-semibold transition-colors"
+              style={{
+                padding: '0.75rem 1.5rem',
+                backgroundColor: loading ? '#666' : '#000',
+                color: '#fff',
+                border: 'none',
+                fontSize: '0.875rem',
+                fontWeight: '400',
+                cursor: loading ? 'not-allowed' : 'pointer',
+                fontFamily: 'inherit'
+              }}
             >
               {loading ? 'Loading...' : 'Check UTXOs'}
             </button>
@@ -76,32 +120,77 @@ function PortfolioContent() {
         </div>
 
         {error && (
-          <div className="p-4 bg-red-900/50 border border-red-500 rounded-lg text-red-200">
-            {error}
+          <div style={{
+            padding: '1rem',
+            border: '1px solid #e5e5e5',
+            color: '#000',
+            marginTop: '1.5rem',
+            backgroundColor: '#fff'
+          }}>
+            Error: {error}
           </div>
         )}
 
         {utxos.length > 0 && (
-          <div>
-            <h2 className="text-xl font-semibold mb-4">Available UTXOs</h2>
-            <div className="space-y-4">
+          <div style={{ marginTop: '1.5rem' }}>
+            <h2 style={{
+              fontSize: '1.25rem',
+              fontWeight: '400',
+              marginBottom: '1rem',
+              color: '#000'
+            }}>
+              Available UTXOs
+            </h2>
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem'
+            }}>
               {utxos.map((utxo, index) => (
-                <div key={index} className="bg-gray-800 rounded-lg p-4">
-                  <div className="flex justify-between items-start">
-                    <div className="flex-1">
-                      <div className="font-mono text-sm text-gray-400 mb-2">
+                <div key={index} style={{
+                  border: '1px solid #e5e5e5',
+                  padding: '1rem'
+                }}>
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'flex-start'
+                  }}>
+                    <div style={{ flex: '1' }}>
+                      <div style={{
+                        fontFamily: 'monospace',
+                        fontSize: '0.875rem',
+                        color: '#666',
+                        marginBottom: '0.5rem'
+                      }}>
                         {utxo.tx_hash}:{utxo.tx_pos}
                       </div>
-                      <div className="text-lg font-semibold">
+                      <div style={{
+                        fontSize: '1.125rem',
+                        fontWeight: '400',
+                        color: '#000'
+                      }}>
                         {formatSatoshis(utxo.value)}
                       </div>
-                      <div className="text-sm text-gray-400 mt-1">
+                      <div style={{
+                        fontSize: '0.875rem',
+                        color: '#666',
+                        marginTop: '0.25rem'
+                      }}>
                         Height: {utxo.height}
                       </div>
                     </div>
                     <button
                       onClick={() => copyJson(utxo)}
-                      className="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded text-sm"
+                      style={{
+                        padding: '0.375rem 0.75rem',
+                        backgroundColor: '#fff',
+                        color: '#000',
+                        border: '1px solid #e5e5e5',
+                        fontSize: '0.875rem',
+                        cursor: 'pointer',
+                        fontFamily: 'inherit'
+                      }}
                     >
                       Copy JSON
                     </button>
@@ -110,8 +199,17 @@ function PortfolioContent() {
               ))}
             </div>
 
-            <div className="mt-6 p-4 bg-blue-900/50 border border-blue-500 rounded-lg">
-              <p className="text-sm">
+            <div style={{
+              marginTop: '1.5rem',
+              padding: '1rem',
+              border: '1px solid #e5e5e5',
+              backgroundColor: '#f8f8f8'
+            }}>
+              <p style={{
+                fontSize: '0.875rem',
+                color: '#000',
+                margin: '0'
+              }}>
                 <strong>Total Balance:</strong>{' '}
                 {formatSatoshis(utxos.reduce((sum, u) => sum + u.value, 0))}
               </p>
@@ -120,22 +218,54 @@ function PortfolioContent() {
         )}
 
         {address && utxos.length === 0 && !loading && (
-          <div className="text-center py-8 text-gray-400">
+          <div style={{
+            textAlign: 'center',
+            padding: '2rem 0',
+            color: '#666'
+          }}>
             No UTXOs found for this address
           </div>
         )}
       </div>
 
-      <div className="mt-8 bg-gray-900 rounded-lg p-6">
-        <h2 className="text-xl font-semibold mb-4">Token Detection</h2>
-        <p className="text-gray-400 text-sm">
+      <div style={{
+        border: '1px solid #e5e5e5',
+        padding: '2rem'
+      }}>
+        <h2 style={{
+          fontSize: '1.25rem',
+          fontWeight: '400',
+          marginBottom: '1rem',
+          color: '#000'
+        }}>
+          Token Detection
+        </h2>
+        <p style={{
+          color: '#666',
+          fontSize: '0.875rem',
+          marginBottom: '1rem'
+        }}>
           Token detection coming soon. This will scan your UTXOs for BSV-21 and BRC-100 tokens.
         </p>
-        <div className="mt-4 p-4 bg-gray-800 rounded-lg">
-          <p className="text-sm text-gray-500">
+        <div style={{
+          padding: '1rem',
+          border: '1px solid #e5e5e5',
+          backgroundColor: '#f8f8f8'
+        }}>
+          <p style={{
+            fontSize: '0.875rem',
+            color: '#666',
+            marginBottom: '0.5rem'
+          }}>
             Planned features:
           </p>
-          <ul className="list-disc list-inside text-sm text-gray-500 mt-2">
+          <ul style={{
+            listStyle: 'disc',
+            paddingLeft: '1.25rem',
+            fontSize: '0.875rem',
+            color: '#666',
+            margin: '0'
+          }}>
             <li>Automatic token detection in UTXOs</li>
             <li>Token balance calculation</li>
             <li>Token transaction history</li>

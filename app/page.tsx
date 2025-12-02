@@ -4,142 +4,303 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div style={{ minHeight: '100vh', background: '#000', color: '#fff', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+    <div style={{ 
+      minHeight: '100vh', 
+      background: '#fff', 
+      color: '#000', 
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+      lineHeight: '1.6'
+    }}>
       {/* Hero */}
-      <div style={{ padding: '120px 20px', textAlign: 'center', maxWidth: '1200px', margin: '0 auto' }}>
-        <h1 style={{ fontSize: '80px', fontWeight: '900', marginBottom: '20px', letterSpacing: '-2px' }}>
+      <div style={{ 
+        padding: '100px 20px 60px', 
+        maxWidth: '900px', 
+        margin: '0 auto' 
+      }}>
+        <h1 style={{ 
+          fontSize: '48px', 
+          fontWeight: '400', 
+          marginBottom: '24px',
+          letterSpacing: '-0.5px'
+        }}>
           Tokenator
         </h1>
-        <p style={{ fontSize: '24px', color: '#888', marginBottom: '40px', lineHeight: '1.4' }}>
-          Deploy and manage BSV tokens without burning them
+        <p style={{ 
+          fontSize: '18px', 
+          color: '#666', 
+          marginBottom: '40px',
+          maxWidth: '600px'
+        }}>
+          A straightforward platform for deploying and managing BSV tokens. 
+          Every transaction includes automatic change outputs to prevent token loss.
         </p>
-        <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <div style={{ 
+          display: 'flex', 
+          gap: '16px', 
+          flexWrap: 'wrap' 
+        }}>
           <Link href="/deploy" style={{
-            padding: '16px 32px',
+            padding: '12px 24px',
+            background: '#000',
+            color: '#fff',
+            textDecoration: 'none',
+            fontSize: '15px',
+            fontWeight: '500',
+            border: '1px solid #000',
+            display: 'inline-block'
+          }}>
+            Get Started
+          </Link>
+          <Link href="/portfolio" style={{
+            padding: '12px 24px',
             background: '#fff',
             color: '#000',
             textDecoration: 'none',
-            borderRadius: '8px',
-            fontWeight: 'bold',
-            fontSize: '18px'
-          }}>
-            Start Building
-          </Link>
-          <Link href="/portfolio" style={{
-            padding: '16px 32px',
-            background: 'transparent',
-            color: '#fff',
-            textDecoration: 'none',
-            border: '2px solid #333',
-            borderRadius: '8px',
-            fontWeight: 'bold',
-            fontSize: '18px'
+            border: '1px solid #000',
+            fontSize: '15px',
+            fontWeight: '500',
+            display: 'inline-block'
           }}>
             View Portfolio
           </Link>
         </div>
       </div>
 
+      {/* Divider */}
+      <div style={{ 
+        borderTop: '1px solid #e5e5e5', 
+        maxWidth: '900px', 
+        margin: '0 auto' 
+      }}></div>
+
       {/* Features */}
-      <div style={{ padding: '80px 20px', maxWidth: '1200px', margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px' }}>
-          
-          <div style={{ padding: '40px', background: '#111', borderRadius: '12px' }}>
-            <h2 style={{ fontSize: '28px', marginBottom: '16px', fontWeight: 'bold' }}>Deploy Tokens</h2>
-            <p style={{ color: '#888', marginBottom: '20px', lineHeight: '1.6' }}>
-              Create BSV-21 and BRC-100 tokens with just a few clicks. Set your parameters and deploy instantly.
+      <div style={{ 
+        padding: '60px 20px', 
+        maxWidth: '900px', 
+        margin: '0 auto' 
+      }}>
+        <h2 style={{ 
+          fontSize: '24px', 
+          fontWeight: '400', 
+          marginBottom: '40px' 
+        }}>
+          Core Functions
+        </h2>
+        
+        <div style={{ 
+          display: 'grid', 
+          gap: '40px' 
+        }}>
+          <div style={{ 
+            borderLeft: '2px solid #000', 
+            paddingLeft: '24px' 
+          }}>
+            <h3 style={{ 
+              fontSize: '18px', 
+              fontWeight: '500', 
+              marginBottom: '8px' 
+            }}>
+              Token Deployment
+            </h3>
+            <p style={{ 
+              color: '#666', 
+              marginBottom: '12px' 
+            }}>
+              Support for BSV-21 and BRC-100 protocols. Configure parameters and deploy.
             </p>
-            <Link href="/deploy" style={{ color: '#0ea5e9', textDecoration: 'none', fontWeight: 'bold' }}>
-              Deploy Now →
+            <Link href="/deploy" style={{ 
+              color: '#000', 
+              fontSize: '14px',
+              textDecoration: 'underline' 
+            }}>
+              Deploy tokens →
             </Link>
           </div>
 
-          <div style={{ padding: '40px', background: '#111', borderRadius: '12px' }}>
-            <h2 style={{ fontSize: '28px', marginBottom: '16px', fontWeight: 'bold' }}>Mint Supply</h2>
-            <p style={{ color: '#888', marginBottom: '20px', lineHeight: '1.6' }}>
-              Generate your token supply safely. Every token is accounted for with proper validation.
+          <div style={{ 
+            borderLeft: '2px solid #000', 
+            paddingLeft: '24px' 
+          }}>
+            <h3 style={{ 
+              fontSize: '18px', 
+              fontWeight: '500', 
+              marginBottom: '8px' 
+            }}>
+              Minting
+            </h3>
+            <p style={{ 
+              color: '#666', 
+              marginBottom: '12px' 
+            }}>
+              Generate token supply with validated transactions. Every token accounted for.
             </p>
-            <Link href="/mint" style={{ color: '#a855f7', textDecoration: 'none', fontWeight: 'bold' }}>
-              Start Minting →
+            <Link href="/mint" style={{ 
+              color: '#000', 
+              fontSize: '14px',
+              textDecoration: 'underline' 
+            }}>
+              Mint supply →
             </Link>
           </div>
 
-          <div style={{ padding: '40px', background: '#111', borderRadius: '12px' }}>
-            <h2 style={{ fontSize: '28px', marginBottom: '16px', fontWeight: 'bold' }}>Safe Transfers</h2>
-            <p style={{ color: '#888', marginBottom: '20px', lineHeight: '1.6' }}>
-              Every transfer includes automatic change outputs. Your tokens are always protected.
+          <div style={{ 
+            borderLeft: '2px solid #000', 
+            paddingLeft: '24px' 
+          }}>
+            <h3 style={{ 
+              fontSize: '18px', 
+              fontWeight: '500', 
+              marginBottom: '8px' 
+            }}>
+              Transfers
+            </h3>
+            <p style={{ 
+              color: '#666', 
+              marginBottom: '12px' 
+            }}>
+              Automatic change output creation prevents accidental token burning.
             </p>
-            <Link href="/transfer" style={{ color: '#10b981', textDecoration: 'none', fontWeight: 'bold' }}>
-              Transfer Tokens →
+            <Link href="/transfer" style={{ 
+              color: '#000', 
+              fontSize: '14px',
+              textDecoration: 'underline' 
+            }}>
+              Transfer tokens →
             </Link>
           </div>
-
         </div>
       </div>
 
+      {/* Divider */}
+      <div style={{ 
+        borderTop: '1px solid #e5e5e5', 
+        maxWidth: '900px', 
+        margin: '0 auto' 
+      }}></div>
+
       {/* Tools */}
-      <div style={{ padding: '80px 20px', background: '#111', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '48px', fontWeight: 'bold', marginBottom: '20px' }}>Essential Tools</h2>
-        <p style={{ fontSize: '20px', color: '#888', marginBottom: '40px' }}>
-          Everything you need in one place
-        </p>
-        <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
+      <div style={{ 
+        padding: '60px 20px', 
+        maxWidth: '900px', 
+        margin: '0 auto' 
+      }}>
+        <h2 style={{ 
+          fontSize: '24px', 
+          fontWeight: '400', 
+          marginBottom: '40px' 
+        }}>
+          Utilities
+        </h2>
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+          gap: '24px' 
+        }}>
           <Link href="/tools/wif" style={{
-            padding: '20px 40px',
-            background: '#222',
-            color: '#fff',
+            padding: '20px',
+            border: '1px solid #e5e5e5',
             textDecoration: 'none',
-            borderRadius: '8px',
-            display: 'inline-block'
+            color: '#000',
+            display: 'block',
+            transition: 'border-color 0.2s'
           }}>
-            <div style={{ fontSize: '24px', marginBottom: '8px' }}>🔑</div>
-            <div>WIF Converter</div>
+            <div style={{ 
+              fontSize: '16px', 
+              fontWeight: '500', 
+              marginBottom: '4px' 
+            }}>
+              WIF Converter
+            </div>
+            <div style={{ 
+              fontSize: '14px', 
+              color: '#666' 
+            }}>
+              Convert private keys to WIF
+            </div>
           </Link>
+          
           <Link href="/portfolio" style={{
-            padding: '20px 40px',
-            background: '#222',
-            color: '#fff',
+            padding: '20px',
+            border: '1px solid #e5e5e5',
             textDecoration: 'none',
-            borderRadius: '8px',
-            display: 'inline-block'
+            color: '#000',
+            display: 'block',
+            transition: 'border-color 0.2s'
           }}>
-            <div style={{ fontSize: '24px', marginBottom: '8px' }}>📊</div>
-            <div>Portfolio Checker</div>
+            <div style={{ 
+              fontSize: '16px', 
+              fontWeight: '500', 
+              marginBottom: '4px' 
+            }}>
+              Portfolio
+            </div>
+            <div style={{ 
+              fontSize: '14px', 
+              color: '#666' 
+            }}>
+              Check address UTXOs
+            </div>
           </Link>
-          <a href="https://github.com/b0ase/tokenator-website" target="_blank" rel="noopener noreferrer" style={{
-            padding: '20px 40px',
-            background: '#222',
-            color: '#fff',
-            textDecoration: 'none',
-            borderRadius: '8px',
-            display: 'inline-block'
-          }}>
-            <div style={{ fontSize: '24px', marginBottom: '8px' }}>💻</div>
-            <div>Source Code</div>
+          
+          <a href="https://github.com/b0ase/tokenator-website" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             style={{
+               padding: '20px',
+               border: '1px solid #e5e5e5',
+               textDecoration: 'none',
+               color: '#000',
+               display: 'block',
+               transition: 'border-color 0.2s'
+             }}>
+            <div style={{ 
+              fontSize: '16px', 
+              fontWeight: '500', 
+              marginBottom: '4px' 
+            }}>
+              Source Code
+            </div>
+            <div style={{ 
+              fontSize: '14px', 
+              color: '#666' 
+            }}>
+              View on GitHub
+            </div>
           </a>
         </div>
       </div>
 
-      {/* CTA */}
-      <div style={{ padding: '120px 20px', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '56px', fontWeight: 'bold', marginBottom: '20px' }}>
-          Ready to start?
-        </h2>
-        <p style={{ fontSize: '20px', color: '#888', marginBottom: '40px' }}>
-          Join developers building on BSV
-        </p>
-        <Link href="/deploy" style={{
-          padding: '20px 40px',
-          background: 'linear-gradient(135deg, #0ea5e9, #0284c7)',
-          color: '#fff',
-          textDecoration: 'none',
-          borderRadius: '8px',
-          fontWeight: 'bold',
-          fontSize: '20px',
-          display: 'inline-block'
+      {/* Footer */}
+      <div style={{ 
+        borderTop: '1px solid #e5e5e5', 
+        padding: '40px 20px', 
+        maxWidth: '900px', 
+        margin: '0 auto' 
+      }}>
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'space-between', 
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '20px'
         }}>
-          Get Started Free
-        </Link>
+          <div style={{ 
+            fontSize: '14px', 
+            color: '#666' 
+          }}>
+            © 2025 Tokenator
+          </div>
+          <Link href="/deploy" style={{
+            padding: '10px 20px',
+            background: '#000',
+            color: '#fff',
+            textDecoration: 'none',
+            fontSize: '14px',
+            fontWeight: '500'
+          }}>
+            Start Building
+          </Link>
+        </div>
       </div>
     </div>
   )

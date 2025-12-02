@@ -52,19 +52,56 @@ export default function DeployPage() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-8">Deploy New Token</h1>
+    <div style={{
+      maxWidth: '900px',
+      margin: '0 auto',
+      padding: '20px',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+      backgroundColor: '#fff',
+      color: '#000'
+    }}>
+      <h1 style={{
+        fontSize: '2rem',
+        fontWeight: '400',
+        marginBottom: '2rem',
+        color: '#000'
+      }}>
+        Deploy New Token
+      </h1>
       
-      <div className="bg-gray-900 rounded-lg p-6 space-y-6">
-        <div className="grid md:grid-cols-2 gap-6">
+      <div style={{
+        border: '1px solid #e5e5e5',
+        padding: '2rem',
+        marginBottom: '2rem'
+      }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '1.5rem',
+          marginBottom: '1.5rem'
+        }}>
           <div>
-            <label className="block text-sm font-medium text-gray-400 mb-2">
+            <label style={{
+              display: 'block',
+              fontSize: '0.875rem',
+              color: '#666',
+              marginBottom: '0.5rem',
+              fontWeight: '400'
+            }}>
               Protocol
             </label>
             <select
               value={protocol}
               onChange={(e) => setProtocol(e.target.value as 'bsv-21' | 'brc-100')}
-              className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500"
+              style={{
+                width: '100%',
+                padding: '0.75rem',
+                border: '1px solid #e5e5e5',
+                fontSize: '0.875rem',
+                fontFamily: 'inherit',
+                backgroundColor: '#fff',
+                color: '#000'
+              }}
             >
               <option value="bsv-21">BSV-21</option>
               <option value="brc-100">BRC-100</option>
@@ -72,7 +109,13 @@ export default function DeployPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-400 mb-2">
+            <label style={{
+              display: 'block',
+              fontSize: '0.875rem',
+              color: '#666',
+              marginBottom: '0.5rem',
+              fontWeight: '400'
+            }}>
               Token Ticker
             </label>
             <input
@@ -80,12 +123,26 @@ export default function DeployPage() {
               value={ticker}
               onChange={(e) => setTicker(e.target.value)}
               placeholder="$TOKEN"
-              className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500"
+              style={{
+                width: '100%',
+                padding: '0.75rem',
+                border: '1px solid #e5e5e5',
+                fontSize: '0.875rem',
+                fontFamily: 'inherit',
+                backgroundColor: '#fff',
+                color: '#000'
+              }}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-400 mb-2">
+            <label style={{
+              display: 'block',
+              fontSize: '0.875rem',
+              color: '#666',
+              marginBottom: '0.5rem',
+              fontWeight: '400'
+            }}>
               Total Supply
             </label>
             <input
@@ -93,12 +150,26 @@ export default function DeployPage() {
               value={supply}
               onChange={(e) => setSupply(e.target.value)}
               placeholder="1000000"
-              className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500"
+              style={{
+                width: '100%',
+                padding: '0.75rem',
+                border: '1px solid #e5e5e5',
+                fontSize: '0.875rem',
+                fontFamily: 'inherit',
+                backgroundColor: '#fff',
+                color: '#000'
+              }}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-400 mb-2">
+            <label style={{
+              display: 'block',
+              fontSize: '0.875rem',
+              color: '#666',
+              marginBottom: '0.5rem',
+              fontWeight: '400'
+            }}>
               Decimals
             </label>
             <input
@@ -107,13 +178,27 @@ export default function DeployPage() {
               onChange={(e) => setDecimals(e.target.value)}
               min="0"
               max="8"
-              className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500"
+              style={{
+                width: '100%',
+                padding: '0.75rem',
+                border: '1px solid #e5e5e5',
+                fontSize: '0.875rem',
+                fontFamily: 'inherit',
+                backgroundColor: '#fff',
+                color: '#000'
+              }}
             />
           </div>
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-400 mb-2">
+        <div style={{ marginBottom: '1.5rem' }}>
+          <label style={{
+            display: 'block',
+            fontSize: '0.875rem',
+            color: '#666',
+            marginBottom: '0.5rem',
+            fontWeight: '400'
+          }}>
             Private Key (WIF)
           </label>
           <input
@@ -121,12 +206,26 @@ export default function DeployPage() {
             value={privateKey}
             onChange={(e) => setPrivateKey(e.target.value)}
             placeholder="L..."
-            className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500"
+            style={{
+              width: '100%',
+              padding: '0.75rem',
+              border: '1px solid #e5e5e5',
+              fontSize: '0.875rem',
+              fontFamily: 'inherit',
+              backgroundColor: '#fff',
+              color: '#000'
+            }}
           />
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-400 mb-2">
+        <div style={{ marginBottom: '1.5rem' }}>
+          <label style={{
+            display: 'block',
+            fontSize: '0.875rem',
+            color: '#666',
+            marginBottom: '0.5rem',
+            fontWeight: '400'
+          }}>
             Funding UTXO (JSON)
           </label>
           <textarea
@@ -134,43 +233,110 @@ export default function DeployPage() {
             onChange={(e) => setUtxo(e.target.value)}
             placeholder='{"txId": "...", "outputIndex": 0, "satoshis": 10000}'
             rows={3}
-            className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500 font-mono text-sm"
+            style={{
+              width: '100%',
+              padding: '0.75rem',
+              border: '1px solid #e5e5e5',
+              fontSize: '0.875rem',
+              fontFamily: 'monospace',
+              backgroundColor: '#fff',
+              color: '#000',
+              resize: 'vertical'
+            }}
           />
         </div>
 
         <button
           onClick={handleDeploy}
-          className="w-full px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg font-semibold transition-colors"
+          style={{
+            width: '100%',
+            padding: '0.75rem 1.5rem',
+            backgroundColor: '#000',
+            color: '#fff',
+            border: 'none',
+            fontSize: '0.875rem',
+            fontWeight: '400',
+            cursor: 'pointer',
+            fontFamily: 'inherit'
+          }}
         >
           Deploy Token
         </button>
 
         {error && (
-          <div className="p-4 bg-red-900/50 border border-red-500 rounded-lg text-red-200">
-            {error}
+          <div style={{
+            padding: '1rem',
+            border: '1px solid #e5e5e5',
+            color: '#000',
+            marginTop: '1.5rem',
+            backgroundColor: '#fff'
+          }}>
+            Error: {error}
           </div>
         )}
 
         {result && (
-          <div className="space-y-4">
-            <div className="p-4 bg-green-900/50 border border-green-500 rounded-lg">
-              <h3 className="font-semibold text-green-400 mb-2">✅ Token Deployment Created!</h3>
-              <div className="space-y-1 text-sm">
-                <p>Token ID: <span className="font-mono">{result.tokenId}</span></p>
+          <div style={{ marginTop: '1.5rem' }}>
+            <div style={{
+              padding: '1rem',
+              border: '1px solid #e5e5e5',
+              marginBottom: '1rem'
+            }}>
+              <h3 style={{
+                fontSize: '1rem',
+                fontWeight: '400',
+                marginBottom: '0.75rem',
+                color: '#000'
+              }}>
+                Token Deployment Created
+              </h3>
+              <div style={{
+                fontSize: '0.875rem',
+                color: '#666',
+                lineHeight: '1.5'
+              }}>
+                <p>Token ID: <span style={{ fontFamily: 'monospace' }}>{result.tokenId}</span></p>
                 <p>Ticker: {result.ticker}</p>
                 <p>Supply: {result.supply}</p>
                 <p>Protocol: {result.protocol}</p>
               </div>
             </div>
 
-            <div className="p-4 bg-gray-800 rounded-lg">
-              <h4 className="font-semibold mb-2">Transaction Hex:</h4>
-              <div className="bg-black p-3 rounded font-mono text-xs break-all">
+            <div style={{
+              padding: '1rem',
+              border: '1px solid #e5e5e5'
+            }}>
+              <h4 style={{
+                fontSize: '0.875rem',
+                fontWeight: '400',
+                marginBottom: '0.75rem',
+                color: '#000'
+              }}>
+                Transaction Hex:
+              </h4>
+              <div style={{
+                backgroundColor: '#f8f8f8',
+                padding: '0.75rem',
+                fontFamily: 'monospace',
+                fontSize: '0.75rem',
+                wordBreak: 'break-all',
+                border: '1px solid #e5e5e5',
+                color: '#000'
+              }}>
                 {result.hex}
               </div>
-              <p className="text-sm text-gray-400 mt-2">
+              <p style={{
+                fontSize: '0.75rem',
+                color: '#666',
+                marginTop: '0.5rem'
+              }}>
                 Copy and broadcast at{' '}
-                <a href="https://whatsonchain.com/broadcast" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+                <a 
+                  href="https://whatsonchain.com/broadcast" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ color: '#000', textDecoration: 'underline' }}
+                >
                   whatsonchain.com/broadcast
                 </a>
               </p>

@@ -56,26 +56,79 @@ export default function TransferPage() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-8">Transfer Tokens</h1>
+    <div style={{
+      maxWidth: '900px',
+      margin: '0 auto',
+      padding: '20px',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+      backgroundColor: '#fff',
+      color: '#000'
+    }}>
+      <h1 style={{
+        fontSize: '2rem',
+        fontWeight: '400',
+        marginBottom: '2rem',
+        color: '#000'
+      }}>
+        Transfer Tokens
+      </h1>
       
-      <div className="bg-gray-900 rounded-lg p-6 space-y-6">
-        <div className="p-4 bg-green-900/50 border border-green-500 rounded-lg">
-          <p className="text-sm font-semibold mb-1">✅ Safe Transfer with Automatic Change</p>
-          <p className="text-xs text-gray-300">
+      <div style={{
+        border: '1px solid #e5e5e5',
+        padding: '2rem',
+        marginBottom: '2rem'
+      }}>
+        <div style={{
+          padding: '1rem',
+          border: '1px solid #e5e5e5',
+          marginBottom: '1.5rem',
+          backgroundColor: '#f8f8f8'
+        }}>
+          <p style={{
+            fontSize: '0.875rem',
+            fontWeight: '400',
+            marginBottom: '0.25rem',
+            color: '#000'
+          }}>
+            Safe Transfer with Automatic Change
+          </p>
+          <p style={{
+            fontSize: '0.75rem',
+            color: '#666',
+            margin: '0'
+          }}>
             This tool ALWAYS creates change outputs. Your tokens will never be burned.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '1.5rem',
+          marginBottom: '1.5rem'
+        }}>
           <div>
-            <label className="block text-sm font-medium text-gray-400 mb-2">
+            <label style={{
+              display: 'block',
+              fontSize: '0.875rem',
+              color: '#666',
+              marginBottom: '0.5rem',
+              fontWeight: '400'
+            }}>
               Protocol
             </label>
             <select
               value={protocol}
               onChange={(e) => setProtocol(e.target.value as 'bsv-21' | 'brc-100')}
-              className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500"
+              style={{
+                width: '100%',
+                padding: '0.75rem',
+                border: '1px solid #e5e5e5',
+                fontSize: '0.875rem',
+                fontFamily: 'inherit',
+                backgroundColor: '#fff',
+                color: '#000'
+              }}
             >
               <option value="bsv-21">BSV-21</option>
               <option value="brc-100">BRC-100</option>
@@ -83,7 +136,13 @@ export default function TransferPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-400 mb-2">
+            <label style={{
+              display: 'block',
+              fontSize: '0.875rem',
+              color: '#666',
+              marginBottom: '0.5rem',
+              fontWeight: '400'
+            }}>
               Token ID
             </label>
             <input
@@ -91,12 +150,26 @@ export default function TransferPage() {
               value={tokenId}
               onChange={(e) => setTokenId(e.target.value)}
               placeholder="txid_0"
-              className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500 font-mono text-sm"
+              style={{
+                width: '100%',
+                padding: '0.75rem',
+                border: '1px solid #e5e5e5',
+                fontSize: '0.875rem',
+                fontFamily: 'monospace',
+                backgroundColor: '#fff',
+                color: '#000'
+              }}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-400 mb-2">
+            <label style={{
+              display: 'block',
+              fontSize: '0.875rem',
+              color: '#666',
+              marginBottom: '0.5rem',
+              fontWeight: '400'
+            }}>
               Input Token Amount
             </label>
             <input
@@ -104,12 +177,26 @@ export default function TransferPage() {
               value={inputAmount}
               onChange={(e) => setInputAmount(e.target.value)}
               placeholder="How many tokens in your UTXO"
-              className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500"
+              style={{
+                width: '100%',
+                padding: '0.75rem',
+                border: '1px solid #e5e5e5',
+                fontSize: '0.875rem',
+                fontFamily: 'inherit',
+                backgroundColor: '#fff',
+                color: '#000'
+              }}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-400 mb-2">
+            <label style={{
+              display: 'block',
+              fontSize: '0.875rem',
+              color: '#666',
+              marginBottom: '0.5rem',
+              fontWeight: '400'
+            }}>
               Send Amount
             </label>
             <input
@@ -117,13 +204,27 @@ export default function TransferPage() {
               value={sendAmount}
               onChange={(e) => setSendAmount(e.target.value)}
               placeholder="How many to send"
-              className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500"
+              style={{
+                width: '100%',
+                padding: '0.75rem',
+                border: '1px solid #e5e5e5',
+                fontSize: '0.875rem',
+                fontFamily: 'inherit',
+                backgroundColor: '#fff',
+                color: '#000'
+              }}
             />
           </div>
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-400 mb-2">
+        <div style={{ marginBottom: '1.5rem' }}>
+          <label style={{
+            display: 'block',
+            fontSize: '0.875rem',
+            color: '#666',
+            marginBottom: '0.5rem',
+            fontWeight: '400'
+          }}>
             Recipient Address
           </label>
           <input
@@ -131,12 +232,26 @@ export default function TransferPage() {
             value={recipient}
             onChange={(e) => setRecipient(e.target.value)}
             placeholder="1ABC..."
-            className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500"
+            style={{
+              width: '100%',
+              padding: '0.75rem',
+              border: '1px solid #e5e5e5',
+              fontSize: '0.875rem',
+              fontFamily: 'inherit',
+              backgroundColor: '#fff',
+              color: '#000'
+            }}
           />
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-400 mb-2">
+        <div style={{ marginBottom: '1.5rem' }}>
+          <label style={{
+            display: 'block',
+            fontSize: '0.875rem',
+            color: '#666',
+            marginBottom: '0.5rem',
+            fontWeight: '400'
+          }}>
             Private Key (WIF)
           </label>
           <input
@@ -144,12 +259,26 @@ export default function TransferPage() {
             value={privateKey}
             onChange={(e) => setPrivateKey(e.target.value)}
             placeholder="L..."
-            className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500"
+            style={{
+              width: '100%',
+              padding: '0.75rem',
+              border: '1px solid #e5e5e5',
+              fontSize: '0.875rem',
+              fontFamily: 'inherit',
+              backgroundColor: '#fff',
+              color: '#000'
+            }}
           />
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-400 mb-2">
+        <div style={{ marginBottom: '1.5rem' }}>
+          <label style={{
+            display: 'block',
+            fontSize: '0.875rem',
+            color: '#666',
+            marginBottom: '0.5rem',
+            fontWeight: '400'
+          }}>
             Token UTXO (JSON)
           </label>
           <textarea
@@ -157,42 +286,109 @@ export default function TransferPage() {
             onChange={(e) => setTokenUtxo(e.target.value)}
             placeholder='{"txId": "...", "outputIndex": 0, "satoshis": 1, "script": "..."}'
             rows={3}
-            className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500 font-mono text-sm"
+            style={{
+              width: '100%',
+              padding: '0.75rem',
+              border: '1px solid #e5e5e5',
+              fontSize: '0.875rem',
+              fontFamily: 'monospace',
+              backgroundColor: '#fff',
+              color: '#000',
+              resize: 'vertical'
+            }}
           />
         </div>
 
         <button
           onClick={handleTransfer}
-          className="w-full px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg font-semibold transition-colors"
+          style={{
+            width: '100%',
+            padding: '0.75rem 1.5rem',
+            backgroundColor: '#000',
+            color: '#fff',
+            border: 'none',
+            fontSize: '0.875rem',
+            fontWeight: '400',
+            cursor: 'pointer',
+            fontFamily: 'inherit'
+          }}
         >
           Create Transfer Transaction
         </button>
 
         {error && (
-          <div className="p-4 bg-red-900/50 border border-red-500 rounded-lg text-red-200">
-            {error}
+          <div style={{
+            padding: '1rem',
+            border: '1px solid #e5e5e5',
+            color: '#000',
+            marginTop: '1.5rem',
+            backgroundColor: '#fff'
+          }}>
+            Error: {error}
           </div>
         )}
 
         {result && (
-          <div className="space-y-4">
-            <div className="p-4 bg-green-900/50 border border-green-500 rounded-lg">
-              <h3 className="font-semibold text-green-400 mb-2">✅ Transfer Transaction Created!</h3>
-              <div className="space-y-1 text-sm">
+          <div style={{ marginTop: '1.5rem' }}>
+            <div style={{
+              padding: '1rem',
+              border: '1px solid #e5e5e5',
+              marginBottom: '1rem'
+            }}>
+              <h3 style={{
+                fontSize: '1rem',
+                fontWeight: '400',
+                marginBottom: '0.75rem',
+                color: '#000'
+              }}>
+                Transfer Transaction Created
+              </h3>
+              <div style={{
+                fontSize: '0.875rem',
+                color: '#666',
+                lineHeight: '1.5'
+              }}>
                 <p>Sending: {result.sent} tokens</p>
                 <p>Change: {result.change} tokens (automatically created!)</p>
-                <p>To: <span className="font-mono text-xs">{result.recipient}</span></p>
+                <p>To: <span style={{ fontFamily: 'monospace', fontSize: '0.75rem' }}>{result.recipient}</span></p>
               </div>
             </div>
 
-            <div className="p-4 bg-gray-800 rounded-lg">
-              <h4 className="font-semibold mb-2">Transaction Hex:</h4>
-              <div className="bg-black p-3 rounded font-mono text-xs break-all">
+            <div style={{
+              padding: '1rem',
+              border: '1px solid #e5e5e5'
+            }}>
+              <h4 style={{
+                fontSize: '0.875rem',
+                fontWeight: '400',
+                marginBottom: '0.75rem',
+                color: '#000'
+              }}>
+                Transaction Hex:
+              </h4>
+              <div style={{
+                backgroundColor: '#f8f8f8',
+                padding: '0.75rem',
+                fontFamily: 'monospace',
+                fontSize: '0.75rem',
+                wordBreak: 'break-all',
+                border: '1px solid #e5e5e5',
+                color: '#000'
+              }}>
                 {result.hex}
               </div>
-              <p className="text-sm text-gray-400 mt-2">
+              <p style={{
+                fontSize: '0.75rem',
+                color: '#666',
+                marginTop: '0.5rem'
+              }}>
                 Broadcast at{' '}
-                <a href="https://whatsonchain.com/broadcast" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+                <a 
+                  href="https://whatsonchain.com/broadcast" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ color: '#000', textDecoration: 'underline' }}
+                >
                   whatsonchain.com/broadcast
                 </a>
               </p>
